@@ -27,9 +27,23 @@ function returnNeighboringNumbers(num) {
 returnNeighboringNumbers(0);
 
 function getMathResult(arg1, arg2) {
-  if (typeof arg2 !== "number" && agr2 <= 0) {
-    return arg1;
+  let str = "";
+  if (typeof arg2 !== "number" || arg2 <= 0) {
+    str = arg1;
+    console.log(str);
+    return str;
   } else {
-    //
+    for (let i = 1; i <= arg2; i++) {
+      str += arg1 * i;
+      if (i < arg2) {
+        str += "---";
+      } else {
+        console.log(str);
+        return str;
+      }
+      //
+    }
   }
 }
+
+getMathResult(20, -5);
