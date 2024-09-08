@@ -3,7 +3,6 @@
 function returnName(name) {
   console.log(`Hello, ${name} !`);
   return "Hello, " + name + " !";
-  //
 }
 returnName("Name");
 
@@ -21,7 +20,6 @@ function returnNeighboringNumbers(num) {
   }
   console.log(arr);
   return arr;
-  //
 }
 
 returnNeighboringNumbers(0);
@@ -41,7 +39,6 @@ function getMathResult(arg1, arg2) {
         console.log(str);
         return str;
       }
-      //
     }
   }
 }
