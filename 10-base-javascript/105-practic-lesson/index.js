@@ -1,28 +1,27 @@
 "use strict";
 
-// function calculateCubeProperties(sideLength) {
-//   // Проверка на корректность входных данных
-//   if (
-//     typeof sideLength !== "number" ||
-//     !Number.isInteger(sideLength) ||
-//     isNaN(sideLength) ||
-//     sideLength < 0 ||
-//     sideLength === 0
-//   ) {
-//     alert("При вычислении произошла ошибка");
-//     return;
-//   }
+function calculateCubeProperties(sideLength) {
+  // Проверка на корректность входных данных
+  if (
+    typeof sideLength !== "number" ||
+    !Number.isInteger(sideLength) ||
+    isNaN(sideLength) ||
+    sideLength < 0 ||
+    sideLength === 0
+  ) {
+    console.log("При вычислении произошла ошибка");
+    return "При вычислении произошла ошибка";
+  }
 
-//   // Вычисление объема (V = a * a * a)
-//   let volume = sideLength * sideLength * sideLength;
+  // Вычисление объема (V = a * a * a)
+  let volume = sideLength * sideLength * sideLength;
 
-//   // Вычисление площади поверхности (S = 6 * a * a)
-//   let surfaceArea = 6 * sideLength * sideLength;
+  // Вычисление площади поверхности (S = 6 * a * a)
+  let surfaceArea = 6 * sideLength * sideLength;
 
-//   return alert(
-//     `Объем куба = ${volume}, площадь поверхности куба = ${surfaceArea} `
-//   );
-// }
+  let res = `Объем куба: ${volume}, площадь всей поверхности: ${surfaceArea}`;
+  return res;
+}
 
 // calculateCubeProperties(+prompt("Введите значение стороны куба", "0"));
 
@@ -33,16 +32,17 @@ function getCoupeNumber(numberPlace) {
     isNaN(numberPlace) ||
     numberPlace < 0
   ) {
-    alert("Ошибка. Проверьте правильность введенного номера места");
-    return;
+    console.log("Ошибка. Проверьте правильность введенного номера места");
+    return "Ошибка. Проверьте правильность введенного номера места";
   } else if (numberPlace == 0 || numberPlace > 36) {
-    alert("Таких мест в вагоне не существует");
-    return;
+    console.log("Таких мест в вагоне не существует");
+    return "Таких мест в вагоне не существует";
   }
 
   let coupeNumber = Math.ceil(numberPlace / 4);
 
-  return alert(`Номер купе ${coupeNumber}`);
+  //return alert(`Номер купе ${coupeNumber}`);
+  return coupeNumber;
 }
 
-getCoupeNumber(+prompt("Введите номер места в купе:", ""));
+// getCoupeNumber(+prompt("Введите номер места в купе:", ""));
