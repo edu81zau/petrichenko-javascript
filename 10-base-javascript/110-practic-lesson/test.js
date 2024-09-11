@@ -1,22 +1,18 @@
-describe("test getTimeFromMinutes function", function () {
+describe("test fib function", function () {
   const testData = [
-    [150, "Это 2 часа и 30 минут"],
-    [50, "Это 0 часов и 50 минут"],
-    [110, "Это 1 час и 50 минут"],
-    [0, "Это 0 часов и 0 минут"],
-    [-150, "Ошибка, проверьте данные"],
+    [4, "0 1 1 2"],
+    [7, "0 1 1 2 3 5 8"],
+    ["7", ""],
+    [1, "0"],
+    [0, ""],
   ];
-
-  //   it("купе для 2", function () {
-  //     assert.equal(getCoupeNumber(2), 1);
-  //   });
 
   testData.forEach(
     //
     (dataItem) => {
       const testArg = dataItem[0],
         expected = dataItem[1],
-        actual = getTimeFromMinutes(testArg);
+        actual = fib(testArg);
       it(`Для "${testArg}", ожидаем "${expected}", актуальное значение "${actual}"`, function () {
         assert.equal(actual, expected);
       }); //
