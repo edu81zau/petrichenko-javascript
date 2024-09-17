@@ -22,6 +22,9 @@ console.log(Object.keys(options).length);
 // delete options.name;
 // console.log(options);
 
+const { border, bg } = options.colors; //destructuring object
+console.log(border);
+
 let counter = 0;
 for (let key in options) {
   if (typeof options[key] === "object") {
