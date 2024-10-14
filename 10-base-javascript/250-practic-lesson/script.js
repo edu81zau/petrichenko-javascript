@@ -34,7 +34,7 @@ function isOpen(prop) {
   return answer;
 }
 
-console.log(isOpen(restorantData.openNow));
+//isOpen(restorantData.openNow);
 
 function isAverageLunchPriceTrue(fDish, sDish, average) {
   if (
@@ -47,13 +47,13 @@ function isAverageLunchPriceTrue(fDish, sDish, average) {
   }
 }
 
-console.log(
-  isAverageLunchPriceTrue(
-    restorantData.menu[0],
-    restorantData.menu[1],
-    restorantData.averageLunchPrice
-  )
-);
+// console.log(
+//   isAverageLunchPriceTrue(
+//     restorantData.menu[0],
+//     restorantData.menu[1],
+//     restorantData.averageLunchPrice
+//   )
+// );
 
 function transferWaitors(data) {
   const copy = Object.assign({}, data);
