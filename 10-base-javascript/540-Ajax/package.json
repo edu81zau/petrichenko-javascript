@@ -1,0 +1,16 @@
+{
+  "name": "530-rest-operation",
+  "version": "0.0.1",
+  "description": "",
+  "main": "public/index.html",
+  "scripts": {
+    "dev": "webpack-dev-server --port 7080"
+  },
+  "author": "ZAU",
+  "dependencies": {
+    "webpack": "^1.13.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^1.14.1"
+  }
+}
