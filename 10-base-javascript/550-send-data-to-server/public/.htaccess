@@ -1,0 +1,5 @@
+<FilesMatch "\.icons$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+Options Indexes
