@@ -48,3 +48,5 @@ http://localhost:3000/requests
 
 Home
 http://localhost:3000
+
+6. Остановка json-server комбинацией клавиш CTRL+C
