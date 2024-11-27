@@ -1,6 +1,8 @@
 https://www.npmjs.com/package/json-server
 https://github.com/typicode/json-server
 
+[Документация к версии 0](https://github.com/typicode/json-server/tree/v0)
+
 1. Инициализзируем проект npm
 
 ```shell
@@ -36,7 +38,7 @@ npm update
 5. Запускаем json-server
 
 ```shell
-npx json-server db.json
+npx json-server ./public/db.json
 ```
 
 Получили запущеный сервер на порту 3000
@@ -49,5 +51,6 @@ http://localhost:3000/requests
 Home
 http://localhost:3000
 
-6. Остановка json-server комбинацией клавиш CTRL+C в терманале, где ранее был запущенный сервер
-   (см. п. 5)
+6. Остановка json-server комбинацией клавиш CTRL+C в терманале, где ранее
+   был запущенный сервер (см. п. 5)
+   На вопрос Terminate batch job (Y/N)? ответить y
