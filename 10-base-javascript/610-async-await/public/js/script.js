@@ -50,7 +50,13 @@ window.addEventListener("DOMContentLoaded", function () {
   const deadline = "2024-12-11";
 
   function getTimeRemaining(endtime) {
+    //Date.parse(endtime): Преобразует строку endtime в миллисекунды с начала эпохи Unix.
+    //Date.parse(new Date()): Получает текущее время в миллисекундах.
+
     const t = Date.parse(endtime) - Date.parse(new Date()),
+      // t / (1000 * 60 * 60 * 24) - делит оставшееся время в миллисекундах
+      // на количество миллисекунд в одном дне.
+      // Math.floor() округляет результат вниз, чтобы получить целое число дней.
       days = Math.floor(t / (1000 * 60 * 60 * 24)),
       seconds = Math.floor((t / 1000) % 60),
       minutes = Math.floor((t / 1000 / 60) % 60),
@@ -73,6 +79,10 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  //Эта функция создает обратный отсчет на веб-странице, используя HTML элементы для
+  // отображения оставшегося времени до указанной даты и времени.
+  // Функция getTimeRemaining отвечает за расчет оставшегося времени,
+  //  а функция getZero добавляет ведущий ноль к однозначным числам.
   function setClock(selector, endtime) {
     const timer = document.querySelector(selector),
       days = timer.querySelector("#days"),
@@ -101,7 +111,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // Modal
 
+  // modalTrigger: использует document.querySelectorAll для поиска всех элементов на странице,
+  // у которых есть атрибут data-modal. Обычно это кнопки, которые будут открывать модальное окно.
   const modalTrigger = document.querySelectorAll("[data-modal]"),
+    // modal: использует document.querySelector для поиска элемента с классом .modal.
+    // Это сам модальное окно, которое будет появляться и исчезать.
     modal = document.querySelector(".modal");
 
   modalTrigger.forEach((btn) => {
@@ -111,15 +125,25 @@ window.addEventListener("DOMContentLoaded", function () {
   function closeModal() {
     modal.classList.add("hide");
     modal.classList.remove("show");
+    //Устанавливает для document.body.style.overflow значение "",
+    //возвращая возможность прокрутки страницы.
     document.body.style.overflow = "";
   }
 
   function openModal() {
     modal.classList.add("show");
     modal.classList.remove("hide");
+    //document.body.style.overflow значение "hidden",
+    //предотвращая прокрутку страницы, пока модальное окно открыто.
     document.body.style.overflow = "hidden";
     clearInterval(modalTimerId);
   }
+
+  //Вешает обработчик события "click" на элемент .modal.
+  //Проверяет, куда пользователь кликнул внутри модального окна:
+  //Если клик произошел по самому окну (e.target === modal)
+  //или по элементу с атрибутом data-close равным пустому значению
+  //(e.target.getAttribute("data-close") === ""), то вызывается функция closeModal для закрытия окна.
 
   modal.addEventListener("click", (e) => {
     if (e.target === modal || e.target.getAttribute("data-close") == "") {
@@ -127,6 +151,11 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  //document.addEventListener("keydown", ...):
+  //Вешает обработчик события "keydown" на весь документ.
+  //Проверяет, нажата ли клавиша "Escape" (e.code === "Escape") и при этом
+  //модальное окно открыто (modal.classList.contains("show")).
+  //Если да, то вызывается функция closeModal для закрытия окна по нажатию клавиши Esc.
   document.addEventListener("keydown", (e) => {
     if (e.code === "Escape" && modal.classList.contains("show")) {
       closeModal();
@@ -136,6 +165,27 @@ window.addEventListener("DOMContentLoaded", function () {
   const modalTimerId = setTimeout(openModal, 300000);
   // Изменил значение, чтобы не отвлекало
 
+  //Эта функция предназначена для открытия модального окна при достижении пользователем конца страницы.
+
+  //   Условие:
+  //   window.pageYOffset: Возвращает количество пикселей,
+  //   на которое пользователь прокрутил страницу сверху.
+  //   document.documentElement.clientHeight: Возвращает высоту видимой области окна браузера.
+  //   document.documentElement.scrollHeight: Возвращает общую высоту документа, включая скрытые части.
+  //   Логика условия: Если сумма прокрученной части страницы и высоты видимой области равна или
+  //   больше общей высоты документа, значит пользователь достиг конца страницы.
+
+  //  Действия при выполнении условия:
+  //  openModal(): Вызывается функция openModal()  для открытия модального окна.
+  //  window.removeEventListener("scroll", showModalByScroll): Убирается обработчик события scroll,
+  //  чтобы функция showModalByScroll больше не вызывалась при дальнейшей прокрутке страницы.
+  //  Это необходимо, чтобы модальное окно не открывалось повторно.
+
+  // window.addEventListener("scroll", showModalByScroll);
+
+  //  Вешаем обработчик события:
+  //  К объекту window добавляется обработчик события scroll. Это означает, что каждый раз,
+  //  когда пользователь прокручивает страницу, будет вызываться функция showModalByScroll.
   function showModalByScroll() {
     if (
       window.pageYOffset + document.documentElement.clientHeight >=
@@ -188,7 +238,8 @@ window.addEventListener("DOMContentLoaded", function () {
           `;
       this.parent.append(element);
     }
-  }
+  } // end class MenuCard
+
   const getResourse = async (url, data) => {
     const res = await fetch(url);
 
@@ -199,39 +250,18 @@ window.addEventListener("DOMContentLoaded", function () {
     return await res.json();
   };
 
-  // getResourse("http://localhost:3000/menu").then((data) => {
-  //   data.forEach(({ img, altimg, title, descr, price }) => {
-  //     new MenuCard(
-  //       img,
-  //       altimg,
-  //       title,
-  //       descr,
-  //       price,
-  //       ".menu .container"
-  //     ).render();
-  //   });
-  // });
-
-  getResourse("http://localhost:3000/menu").then((data) => creatCard(data));
-
-  function creatCard(data) {
+  getResourse("http://localhost:3000/menu").then((data) => {
     data.forEach(({ img, altimg, title, descr, price }) => {
-      const element = document.createElement("div");
-      element.classList.add("menu__item");
-      element.innerHTML = `
-              <img src=${img} alt=${altimg}>
-              <h3 class="menu__item-subtitle">${title}</h3>
-              <div class="menu__item-descr">${descr}</div>
-              <div class="menu__item-divider"></div>
-              <div class="menu__item-price">
-                  <div class="menu__item-cost">Цена:</div>
-                  <div class="menu__item-total"><span>${price}</span> грн/день</div>
-              </div>
-      `;
-      document.querySelector(".menu .container").append(element);
+      new MenuCard(
+        img,
+        altimg,
+        title,
+        descr,
+        price,
+        ".menu .container"
+      ).render();
     });
-  }
-  // Forms
+  });
 
   const forms = document.querySelectorAll("form");
   const message = {
@@ -265,6 +295,12 @@ window.addEventListener("DOMContentLoaded", function () {
               display: block;
               margin: 0 auto;
           `;
+      // Это метод, который добавляется к элементу DOM.
+      //Он позволяет вставить новый элемент в определенное место относительно исходного элемента.
+      //form - это тот элемент, относительно которого будет происходить вставка.
+      //"afterend": Это аргумент, указывающий, что новый элемент должен быть вставлен сразу после
+      //form и всех его дочерних элементов.
+      //Переменная statusMessage должна содержать новый элемент, который нужно вставить.
       form.insertAdjacentElement("afterend", statusMessage);
 
       const formData = new FormData(form);
@@ -313,14 +349,25 @@ window.addEventListener("DOMContentLoaded", function () {
   fetch(" http://localhost:3000/menu")
     .then((data) => data.json())
     .then((res) => console.log(res));
-
-  // fetch("https://jsonplaceholder.typicode.com/posts", {
-  //   method: "POST",
-  //   body: JSON.stringify({ name: "Alex" }),
-  //   headars: {
-  //     "Content-type": "application/json",
-  //   },
-  // })
-  //   .then((response) => response.json())
-  //   .then((json) => console.log(json));
 });
+
+// getResourse("http://localhost:3000/menu").then((data) => creatCard(data));
+
+// function creatCard(data) {
+//   data.forEach(({ img, altimg, title, descr, price }) => {
+//     const element = document.createElement("div");
+//     element.classList.add("menu__item");
+//     element.innerHTML = `
+//             <img src=${img} alt=${altimg}>
+//             <h3 class="menu__item-subtitle">${title}</h3>
+//             <div class="menu__item-descr">${descr}</div>
+//             <div class="menu__item-divider"></div>
+//             <div class="menu__item-price">
+//                 <div class="menu__item-cost">Цена:</div>
+//                 <div class="menu__item-total"><span>${price}</span> грн/день</div>
+//             </div>
+//     `;
+//     document.querySelector(".menu .container").append(element);
+//   });
+// }
+// Forms
