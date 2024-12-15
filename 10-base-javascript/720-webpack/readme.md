@@ -6,7 +6,7 @@ npx webpack
 
 В результате выполнения этой команды появится папка ./js и в ней файлы bundle.js и bundle.js.map
 
-2. Запускаем json-server
+2. Запускаем json-server. Для запуска сервера необходимо добавить новую консоль
 
 ```shell
 npx json-server ./public/db.json

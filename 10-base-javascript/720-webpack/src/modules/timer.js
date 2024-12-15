@@ -1,16 +1,6 @@
-function timer() {
-  // Timer
-
-  const deadline = "2024-12-11";
-
+function timer(id, deadline) {
   function getTimeRemaining(endtime) {
-    //Date.parse(endtime): Преобразует строку endtime в миллисекунды с начала эпохи Unix.
-    //Date.parse(new Date()): Получает текущее время в миллисекундах.
-
     const t = Date.parse(endtime) - Date.parse(new Date()),
-      // t / (1000 * 60 * 60 * 24) - делит оставшееся время в миллисекундах
-      // на количество миллисекунд в одном дне.
-      // Math.floor() округляет результат вниз, чтобы получить целое число дней.
       days = Math.floor(t / (1000 * 60 * 60 * 24)),
       seconds = Math.floor((t / 1000) % 60),
       minutes = Math.floor((t / 1000 / 60) % 60),
@@ -33,10 +23,6 @@ function timer() {
     }
   }
 
-  //Эта функция создает обратный отсчет на веб-странице, используя HTML элементы для
-  // отображения оставшегося времени до указанной даты и времени.
-  // Функция getTimeRemaining отвечает за расчет оставшегося времени,
-  //  а функция getZero добавляет ведущий ноль к однозначным числам.
   function setClock(selector, endtime) {
     const timer = document.querySelector(selector),
       days = timer.querySelector("#days"),
@@ -61,7 +47,7 @@ function timer() {
     }
   }
 
-  setClock(".timer", deadline);
+  setClock(id, deadline);
 }
 
-module.exports = timer;
+export default timer;
