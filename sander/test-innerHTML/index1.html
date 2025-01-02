@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>zau-slider</title>
+  <link rel="stylesheet" href="public/css/style.css" />
+</head>
+<body>
+    <ul>
+      <li>
+        Животные
+        <ul>
+          <li>
+            Млекопитающие
+            <ul>
+              <li>Коровы</li>
+              <li>Ослы</li>
+              <li>Собаки</li>
+              <li>Тигры</li>
+            </ul>
+          </li>
+          <li>
+            Другие
+            <ul>
+              <li>Змеи</li>
+              <li>Птицы</li>
+              <li>Ящерицы</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Рыбы
+        <ul>
+          <li>
+            Аквариумные
+            <ul>
+              <li>Гуппи</li>
+              <li>Рыба-ангел</li>
+            </ul>
+          </li>
+          <li>
+            Морские
+            <ul>
+              <li>Морская форель</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <script>
+      const allElementsLi = document.body.querySelectorAll("li");
+
+      allElementsLi.forEach((eleLi) => {
+        let count = eleLi.getElementsByTagName("li").length;
+        alert(eleLi.firstChild.data.trim() + ": " + count);
+      });
+    </script>
+  </body>
+</html>
