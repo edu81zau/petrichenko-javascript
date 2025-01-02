@@ -4,7 +4,7 @@ function createPromise() {
     console.log("promise-start");
     const myNum = Math.random() * 100;
     if (myNum < 50) {
-      throw new Error("my Error " + myNum);
+      //throw new Error("my Error " + myNum);
     }
     return reject("my error2");
   })
