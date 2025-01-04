@@ -2,6 +2,7 @@ const app = {
     init: function () {
         console.log("app.init", arguments);
         this.demoDisplay.init();
+        this.demoDisplayAbsolute.init();
         this.demoVisibility.init();
         this.demoOpacity.init();
     },
@@ -26,7 +27,7 @@ const app = {
             this.slides = this.sliderContainer.querySelectorAll(".slide");
         },
         onClickChangeSlide: function () {
-            console.log("app.demoDisplay.onClickChangeSlide", arguments);
+            console.log("app.demoDisplay.onClickNext", arguments);
             if(arguments[0]["target"].className === "buttonAS1"){
                 this.slides[1].classList.remove("active");
                 this.slides[0].classList.add("active");
@@ -39,6 +40,52 @@ const app = {
             //
         }
     },
+
+    demoDisplayAbsolute:{
+        buttonNext: undefined,
+        buttonPrev: undefined,
+        slideIndex:0,
+        sliderContainer: undefined,
+        /**
+         * @type NodeList
+         */
+        slides: undefined,
+
+        init: function () {
+            console.log("app.demoDisplayAbsolute.init", arguments);
+
+            //---------- DisplayAbsolute ----------
+            const rootEl = document.querySelector("#demoAbsolute");
+            this.buttonNext = rootEl.querySelector(".buttonNext");
+            this.buttonNext.addEventListener("click", this.onClickNext.bind(this));
+            this.buttonPrev = rootEl.querySelector(".buttonPrev");
+            this.buttonPrev.addEventListener("click", this.onClickPrev.bind(this));
+            this.sliderContainer = rootEl.querySelector(".slider-window .slider-container-absolut");
+            this.slides = this.sliderContainer.querySelectorAll(".slide");
+            this.setActiveSlide(0);
+        },
+        setActiveSlide: function(slideIndex){
+            this.sliderContainer.style.top = "-"+(slideIndex*200)+"px";
+            this.slideIndex = slideIndex;
+        },
+        onClickNext: function () {
+            console.log("app.demoDisplayAbsolute.onClickNext", arguments);
+            if ((this.slideIndex+1) >= this.slides.length) {
+                this.setActiveSlide(0);
+            } else {
+                this.setActiveSlide(this.slideIndex+1);
+            }
+        },
+        onClickPrev: function () {
+            console.log("app.demoDisplayAbsolute.onClickPrev", arguments);
+            if ((this.slideIndex-1) < 0) {
+                this.setActiveSlide( this.slides.length - 1 );
+            } else {
+                this.setActiveSlide(this.slideIndex-1);
+            }
+        }
+    },
+
     demoVisibility:{
         buttonAS1: undefined,
         buttonAS2: undefined,
@@ -59,7 +106,7 @@ const app = {
             this.slides = this.sliderContainer.querySelectorAll(".slide");
         },
         onClickChangeSlide: function () {
-            console.log("app.demoVisibility.onClickChangeSlide", arguments);
+            console.log("app.demoVisibility.onClickNext", arguments);
             if(arguments[0]["target"].className === "buttonAS1"){
                 this.slides[1].classList.remove("active");
                 this.slides[0].classList.add("active");
@@ -93,7 +140,7 @@ const app = {
             this.slides = this.sliderContainer.querySelectorAll(".slide");
         },
         onClickChangeSlide: function () {
-            console.log("app.demoOpacity.onClickChangeSlide", arguments);
+            console.log("app.demoOpacity.onClickNext", arguments);
             if(arguments[0]["target"].className==="buttonAS1"){
                 this.slides[1].classList.remove("active");
                 this.slides[0].classList.add("active");

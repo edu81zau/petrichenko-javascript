@@ -4,6 +4,18 @@
     padding: 0;
     font-family: Roboto, sans-serif;
 }
+
+.slider-window{
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.slider-container-absolut{
+    position: absolute;
+    margin: 0 0 0 40px;
+}
+
 .slider-container{
     position: relative;
     width: 280px;
@@ -14,6 +26,8 @@
     align-items: center;
     gap: 10px;
     justify-content: normal;
+    border: 1px solid red;
+    margin: 0 0 0 40px;
 }
 
 .slide{
@@ -23,6 +37,7 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 0; /* Чтобы слайды не сжимались */
+    border: 1px solid coral;
 }
 
 #demoDisplay .slide{

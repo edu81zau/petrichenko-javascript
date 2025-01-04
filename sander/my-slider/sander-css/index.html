@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
+<pre>
+    @TODO: применить position: absolute + z-index
+    слайды находятся один под другим
+    @TODO: контейнер для слайдов сделать с position:absolute и передвигать его влево и вправо
+</pre>
 <h2> display: none;</h2>
 <div id="demoDisplay">
     <button class="buttonAS1">active slide 1</button>
@@ -20,6 +24,27 @@
     </div>
     <hr>
 </div>
+
+<h2>Position:absolute </h2>
+<div id="demoAbsolute">
+    <button class="buttonNext">next</button>
+    <button class="buttonPrev">prev</button>
+    <div class="slider-window">
+        <div class="slider-container-absolut">
+            <div class="slide">Slide 1</div>
+            <div class="slide">Slide 2</div>
+            <div class="slide">Slide 3</div>
+            <div class="slide">Slide 4</div>
+            <div class="slide">Slide 5</div>
+            <div class="slide">Slide 6</div>
+            <div class="slide">Slide 7</div>
+            <div class="slide">Slide 8</div>
+        </div>
+        <hr>
+    </div>
+
+</div>
+<hr>
 
 <h2>visibility: hidden;</h2>
 <div id="demoVisibility">
