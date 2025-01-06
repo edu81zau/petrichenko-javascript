@@ -40,6 +40,14 @@
     border: 1px solid coral;
 }
 
+#demoZIndex .slide{
+    position: absolute;
+    top: 0;
+}
+
+#demoZIndex .slide.active{
+    z-index: 10;
+}
 #demoDisplay .slide{
     display: none;
 }

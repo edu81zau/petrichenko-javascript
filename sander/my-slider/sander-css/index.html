@@ -12,7 +12,6 @@
 <pre>
     @TODO: применить position: absolute + z-index
     слайды находятся один под другим
-    @TODO: контейнер для слайдов сделать с position:absolute и передвигать его влево и вправо
 </pre>
 <h2> display: none;</h2>
 <div id="demoDisplay">
@@ -42,10 +41,27 @@
         </div>
         <hr>
     </div>
-
 </div>
 <hr>
 
+<h2>Example with Z-index</h2>
+<div id="demoZIndex">
+    <button class="buttonUp">up</button>
+    <button class="buttonDown">down</button>
+    <div class="slider-window">
+            <div class="slide active">Slide 1</div>
+            <div class="slide">Slide 2</div>
+            <div class="slide">Slide 3</div>
+            <div class="slide">Slide 4</div>
+            <div class="slide">Slide 5</div>
+            <div class="slide">Slide 6</div>
+            <div class="slide">Slide 7</div>
+            <div class="slide">Slide 8</div>
+    </div>
+</div>
+<hr>
+
+<!--
 <h2>visibility: hidden;</h2>
 <div id="demoVisibility">
     <button class="buttonAS1">active slide 1</button>
@@ -67,6 +83,7 @@
     </div>
 </div>
 <hr>
+-->
 
 <script src="script.js"></script>
 <script>app.init()</script>
