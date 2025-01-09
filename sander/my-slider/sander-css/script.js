@@ -90,7 +90,9 @@ const app = {
     demoZIndex: {
         buttonUp: undefined,
         buttonDown: undefined,
+        buttonRandom: undefined,
         sliderContainer: undefined,
+        numberSlide: undefined,
         indexElement: 0,
         /**
          * @type NodeList
@@ -109,11 +111,14 @@ const app = {
             this.buttonUp.addEventListener("click", this.onClickUp.bind(this));
             this.buttonDown = rootEl.querySelector(".buttonDown");
             this.buttonDown.addEventListener("click", this.onClickDown.bind(this));
+            this.buttonRandom = rootEl.querySelector(".buttonRandom");
+            this.buttonRandom.addEventListener("click", this.onClickRandom.bind(this));
             this.sliderContainer = rootEl.querySelector(".slider-window");
             this.slides = this.sliderContainer.querySelectorAll(".slide");
             this.pointContainer = rootEl.querySelector(".slider-points");
             this.points = this.pointContainer.querySelectorAll(".point");
             this.pointContainer.addEventListener("click", this.onClickChange.bind(this));
+            this.numberSlide = rootEl.querySelector("p .number-slide");
             this.setActiveSlide(this.indexElement);
 
         },
@@ -126,6 +131,7 @@ const app = {
             this.slides[index].classList.add("active");
             this.points[index].classList.add("active");
             this.indexElement = index;
+            this.numberSlide.textContent = index+1;
         },
 
         onClickChange: function (event) {
@@ -152,7 +158,12 @@ const app = {
                 newIndex = this.slides.length - 1;
             }
             this.setActiveSlide(newIndex);
+        },
+
+        onClickRandom: function () {
+            console.log("app.demoZIndex.onClickRandom", arguments);
+            let newIndex = Math.floor(Math.random() * this.slides.length);
+            this.setActiveSlide(newIndex);
         }
     }
-
 }
