@@ -4,8 +4,6 @@ const app = {
         this.demoDisplay.init();
         this.demoDisplayAbsolute.init();
         this.demoZIndex.init();
-        //this.demoVisibility.init();
-        //this.demoOpacity.init();
     },
 
     demoDisplay: {
@@ -94,7 +92,7 @@ const app = {
         buttonDown: undefined,
         sliderContainer: undefined,
         indexElement: 0,
-       /**
+        /**
          * @type NodeList
          */
         slides: undefined,
@@ -105,7 +103,6 @@ const app = {
 
         init: function () {
             console.log("app.demoZIndex.init", arguments);
-             //@TODO: сделать функцию setActiveSlide(index), в которой централизовано активировать слайд
             //---------- DisplayZIndex ----------
             const rootEl = document.querySelector("#demoZIndex");
             this.buttonUp = rootEl.querySelector(".buttonUp");
@@ -114,59 +111,47 @@ const app = {
             this.buttonDown.addEventListener("click", this.onClickDown.bind(this));
             this.sliderContainer = rootEl.querySelector(".slider-window");
             this.slides = this.sliderContainer.querySelectorAll(".slide");
-            this.onSettingClass(this.indexElement,"slides","on");
             this.pointContainer = rootEl.querySelector(".slider-points");
             this.points = this.pointContainer.querySelectorAll(".point");
             this.pointContainer.addEventListener("click", this.onClickChange.bind(this));
+            this.setActiveSlide(this.indexElement);
 
         },
-        onSettingClass: function (idElement, nameElement, stateClass) {
-            if (nameElement==="slides"){
-                if (stateClass === "on"){
-                    this.slides[idElement].classList.add("active");
-                }else {
-                    this.slides[idElement].classList.remove("active");
-                }
-            } else {
-                if (stateClass === "on"){
-                    this.points[idElement].classList.add("active");
-                }else{
-                    this.points[idElement].classList.remove("active");
-                }
+
+        setActiveSlide: function (index) {
+            if (index !== this.indexElement) {
+                this.slides[this.indexElement].classList.remove("active");
+                this.points[this.indexElement].classList.remove("active");
             }
+            this.slides[index].classList.add("active");
+            this.points[index].classList.add("active");
+            this.indexElement = index;
         },
+
         onClickChange: function (event) {
             console.log("app.demoZIndex.onClickChange", arguments);
-            this.onSettingClass(this.indexElement,"slides","off");
-            this.onSettingClass(this.indexElement,"points","off");
-            this.indexElement = Array.from(event.target.parentNode.children).indexOf(event.target);
-            this.onSettingClass(this.indexElement,"slides","on");
-            this.onSettingClass(this.indexElement,"points","on");
+            this.setActiveSlide(Array.from(event.target.parentNode.children).indexOf(event.target));
         },
+
         onClickUp: function () {
             console.log("app.demoZIndex.onClickUp", arguments);
-            this.onSettingClass(this.indexElement,"slides","off");
-            this.onSettingClass(this.indexElement,"points","off");
+            let newIndex = this.indexElement + 1;
 
-            ++this.indexElement;
-            console.log(this.indexElement);
-            if (this.indexElement >= this.slides.length) {
-                this.indexElement = 0;
+            console.log(newIndex);
+            if (newIndex >= this.slides.length) {
+                newIndex = 0;
             }
-            this.onSettingClass(this.indexElement,"slides","on");
-            this.onSettingClass(this.indexElement,"points","on");
+            this.setActiveSlide(newIndex);
         },
+
         onClickDown: function () {
             console.log("app.demoZIndex.onClickUp", arguments);
-            this.onSettingClass(this.indexElement,"slides","off");
-            this.onSettingClass(this.indexElement,"points","off");
+            let newIndex = this.indexElement - 1;
 
-            --this.indexElement;
-            if (this.indexElement < 0) {
-                this.indexElement = this.slides.length - 1;
+            if (newIndex < 0) {
+                newIndex = this.slides.length - 1;
             }
-            this.onSettingClass(this.indexElement,"slides","on");
-            this.onSettingClass(this.indexElement,"points","on");
+            this.setActiveSlide(newIndex);
         }
     }
 
