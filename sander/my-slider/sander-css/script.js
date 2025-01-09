@@ -48,6 +48,7 @@ const app = {
         buttonPrev: undefined,
         slideIndex: 0,
         sliderContainer: undefined,
+        pointContainer: undefined,
         /**
          * @type NodeList
          */
@@ -92,16 +93,20 @@ const app = {
         buttonUp: undefined,
         buttonDown: undefined,
         sliderContainer: undefined,
-        slideIndex: 0,
-        /**
+        indexElement: 0,
+       /**
          * @type NodeList
          */
         slides: undefined,
+        /**
+         * @type NodeList
+         */
+        points: undefined,
 
         init: function () {
             console.log("app.demoZIndex.init", arguments);
-
-            //---------- DisplayAbsolute ----------
+             //@TODO: сделать функцию setActiveSlide(index), в которой централизовано активировать слайд
+            //---------- DisplayZIndex ----------
             const rootEl = document.querySelector("#demoZIndex");
             this.buttonUp = rootEl.querySelector(".buttonUp");
             this.buttonUp.addEventListener("click", this.onClickUp.bind(this));
@@ -109,95 +114,60 @@ const app = {
             this.buttonDown.addEventListener("click", this.onClickDown.bind(this));
             this.sliderContainer = rootEl.querySelector(".slider-window");
             this.slides = this.sliderContainer.querySelectorAll(".slide");
-            this.slides[this.slideIndex].classList.add("active");
+            this.onSettingClass(this.indexElement,"slides","on");
+            this.pointContainer = rootEl.querySelector(".slider-points");
+            this.points = this.pointContainer.querySelectorAll(".point");
+            this.pointContainer.addEventListener("click", this.onClickChange.bind(this));
+
+        },
+        onSettingClass: function (idElement, nameElement, stateClass) {
+            if (nameElement==="slides"){
+                if (stateClass === "on"){
+                    this.slides[idElement].classList.add("active");
+                }else {
+                    this.slides[idElement].classList.remove("active");
+                }
+            } else {
+                if (stateClass === "on"){
+                    this.points[idElement].classList.add("active");
+                }else{
+                    this.points[idElement].classList.remove("active");
+                }
+            }
+        },
+        onClickChange: function (event) {
+            console.log("app.demoZIndex.onClickChange", arguments);
+            this.onSettingClass(this.indexElement,"slides","off");
+            this.onSettingClass(this.indexElement,"points","off");
+            this.indexElement = Array.from(event.target.parentNode.children).indexOf(event.target);
+            this.onSettingClass(this.indexElement,"slides","on");
+            this.onSettingClass(this.indexElement,"points","on");
         },
         onClickUp: function () {
             console.log("app.demoZIndex.onClickUp", arguments);
-            this.slides[this.slideIndex].classList.remove("active");
-            ++this.slideIndex;
-            console.log(this.slideIndex);
-            if (this.slideIndex >= this.slides.length) {
-                this.slideIndex = 0;
+            this.onSettingClass(this.indexElement,"slides","off");
+            this.onSettingClass(this.indexElement,"points","off");
+
+            ++this.indexElement;
+            console.log(this.indexElement);
+            if (this.indexElement >= this.slides.length) {
+                this.indexElement = 0;
             }
-            this.slides[this.slideIndex].classList.add("active");
+            this.onSettingClass(this.indexElement,"slides","on");
+            this.onSettingClass(this.indexElement,"points","on");
         },
         onClickDown: function () {
             console.log("app.demoZIndex.onClickUp", arguments);
-            this.slides[this.slideIndex].classList.remove("active");
-            --this.slideIndex;
-            if (this.slideIndex < 0) {
-                this.slideIndex = this.slides.length - 1;
-            }
-            this.slides[this.slideIndex].classList.add("active");
-        }
+            this.onSettingClass(this.indexElement,"slides","off");
+            this.onSettingClass(this.indexElement,"points","off");
 
+            --this.indexElement;
+            if (this.indexElement < 0) {
+                this.indexElement = this.slides.length - 1;
+            }
+            this.onSettingClass(this.indexElement,"slides","on");
+            this.onSettingClass(this.indexElement,"points","on");
+        }
     }
-    // demoVisibility:{
-    //     buttonAS1: undefined,
-    //     buttonAS2: undefined,
-    //     sliderContainer: undefined,
-    //     /**
-    //      * @type NodeList
-    //      */
-    //     slides: undefined,
-    //
-    //     init: function () {
-    //         console.log("app.demoVisibility.init", arguments);
-    //         //---------- Visibility ----------
-    //         this.buttonAS1 = document.querySelector("#demoVisibility .buttonAS1");
-    //         this.buttonAS1.addEventListener("click", this.onClickChangeSlide.bind(this));
-    //         this.buttonAS2 = document.querySelector("#demoVisibility .buttonAS2");
-    //         this.buttonAS2.addEventListener("click", this.onClickChangeSlide.bind(this));
-    //         this.sliderContainer = document.querySelector("#demoVisibility .slider-container");
-    //         this.slides = this.sliderContainer.querySelectorAll(".slide");
-    //     },
-    //     onClickChangeSlide: function () {
-    //         console.log("app.demoVisibility.onClickNext", arguments);
-    //         if(arguments[0]["target"].className === "buttonAS1"){
-    //             this.slides[1].classList.remove("active");
-    //             this.slides[0].classList.add("active");
-    //             console.log(this.slides);
-    //         } else {
-    //             this.slides[0].classList.remove("active");
-    //             this.slides[1].style.backgroundColor = "gold";
-    //             this.slides[1].classList.add("active");
-    //         }
-    //         //
-    //     },
-    //     //
-    // },
-    // demoOpacity:{
-    //     buttonAS1: undefined,
-    //     buttonAS2: undefined,
-    //     sliderContainer: undefined,
-    //     /**
-    //      * @type NodeList
-    //      */
-    //     slides: undefined,
-    //
-    //     init: function () {
-    //         console.log("app.demoOpacity.init", arguments);
-    //         //---------- Opacity ----------
-    //         this.buttonAS1 = document.querySelector("#demoOpacity .buttonAS1");
-    //         this.buttonAS1.addEventListener("click", this.onClickChangeSlide.bind(this));
-    //         this.buttonAS2 = document.querySelector("#demoOpacity .buttonAS2");
-    //         this.buttonAS2.addEventListener("click", this.onClickChangeSlide.bind(this));
-    //         this.sliderContainer = document.querySelector("#demoOpacity .slider-container");
-    //         this.slides = this.sliderContainer.querySelectorAll(".slide");
-    //     },
-    //     onClickChangeSlide: function () {
-    //         console.log("app.demoOpacity.onClickNext", arguments);
-    //         if(arguments[0]["target"].className==="buttonAS1"){
-    //             this.slides[1].classList.remove("active");
-    //             this.slides[0].classList.add("active");
-    //             console.log(this.slides);
-    //         } else {
-    //             this.slides[0].classList.remove("active");
-    //             this.slides[1].style.backgroundColor = "darkorange";
-    //             this.slides[1].classList.add("active");
-    //         }
-    //         //
-    //     }
-    //
-    // }
+
 }

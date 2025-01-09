@@ -48,6 +48,27 @@
 #demoZIndex .slide.active{
     z-index: 10;
 }
+
+#demoZIndex .slider-points{
+    position: absolute;
+    display: flex;
+    margin: 10px 0 0 120px;
+    transform: translateX(-50%);
+    gap: 20px;
+}
+
+#demoZIndex .point{
+    width: 10px; /* Размер точек */
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer; /* Добавляем курсор для интерактивности */
+}
+#demoZIndex .point.active{
+    background-color: green;
+}
+
+
 #demoDisplay .slide{
     display: none;
 }
@@ -73,3 +94,4 @@
     background-color: darkred;
     opacity: 1;
 }
+
