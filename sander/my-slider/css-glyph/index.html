@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+    <!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        .demo-Noto_Sans_Symbols {
+            transition-property: opacity, transform;
+            font-family: "Noto_Sans_Symbols variant0", Tofu;
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            font-optical-sizing: none;
+            line-height: initial;
+            opacity: 1;
+            transition-duration: 350ms;
+        }
+        .arrow-right{
+            font-family: "Noto_Sans_Symbols variant0", Tofu;
+            color: blue;
+
+        }
+        .arrow-right::before{
+            content:"\2190";
+        }
+    </style>
+
+
+</head>
+<body>
+<span>←</span>
+<hr>
+<div class="demo-Noto_Sans_Symbols">
+    <div
+            translate="no"
+            contenteditable=""
+            spellcheck="false"
+            class="hide-focus"
+    >
+        ⛾⛿☯☸ ⛩⛰⛱⛴⛷⛸⛹ ♸⚥☊☍☓☤ 🄰🄱🆈🆉 ⚖♇♪♬
+    </div>
+    <div><span style="color: red; font-size: 2rem">&#x2190;</span></div>
+    <div><span style="color: red; font-size: 2rem">&#x2192;</span></div>
+</div>
+
+<hr>
+<i class="arrow-right"></i>
+</body>
+</html>
