@@ -13,36 +13,46 @@ class Slider {
         this.rootEl = document.querySelector(sliderSelector);
         console.log("rootEl", this.rootEl);
         //@TODO проверить rootEl на null
-        if (this.rootEl.length < 1) {
+        if (this.rootEl === null) {
             throw new Error("Elements not found");
             return;
         }
 
-
-        this.sliderContainer = this.rootEl.querySelector(".zau-slider__items");
-        this.items = this.sliderContainer.querySelectorAll(".zau-slider__item");
-        this.pointContainer = this.rootEl.querySelector(".zau-slider__points");
-        this.points = [];
         //@TODO: проверить, что все элементы найдены
+        this.sliderContainer = this.rootEl.querySelector(".zau-slider__items");
+        if (!this.sliderContainer) {
+            throw new Error("Container for slides not found");
+            return;
+        }
+        this.items = this.sliderContainer.querySelectorAll(".zau-slider__item");
+        if (!this.items) {
+            throw new Error("Slides not found");
+            return;
+        }
+        this.pointContainer = this.rootEl.querySelector(".zau-slider__points");
+        if (!this.pointContainer) {
+            throw new Error("Container for points not found");
+            return;
+        }
+        this.points = [];
+        this.buttonNext = this.rootEl.querySelector(".next");
+        if (!this.buttonNext) {
+            throw new Error("Button not found");
+            return;
+        }
+        this.buttonPrev = this.rootEl.querySelector(".prev");
+        if (!this.buttonPrev) {
+            throw new Error("Button not found");
+            return;
+        }
 
         this.init();
     }
 
     init() {
-//@TODO: избавиться от всех if, которые проверены в конструкторе
-        this.buttonNext = this.rootEl.querySelector(".next");
-        if (this.buttonNext) {
-            this.buttonNext.addEventListener("click", this.onClickUp.bind(this));
-        } else {
-            throw new Error("Button not found");
-        }
-
-        this.buttonPrev = this.rootEl.querySelector(".prev");
-        if (this.buttonPrev) {
-            this.buttonPrev.addEventListener("click", this.onClickDown.bind(this));
-        } else {
-            throw new Error("Button not found");
-        }
+        //@TODO: избавиться от всех if, которые проверены в конструкторе
+        this.buttonNext.addEventListener("click", this.onClickUp.bind(this));
+        this.buttonPrev.addEventListener("click", this.onClickDown.bind(this));
 
         const fragment = document.createDocumentFragment();
         if (this.items.length > 0) {
