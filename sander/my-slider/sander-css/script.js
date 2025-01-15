@@ -92,6 +92,7 @@ const app = {
         buttonDown: undefined,
         buttonRandom: undefined,
         sliderContainer: undefined,
+        pointContainer: undefined,
         numberSlide: undefined,
         indexElement: 0,
         /**
