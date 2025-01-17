@@ -12,45 +12,36 @@ class Slider {
         console.log("sliderSelector.constructor", sliderSelector);
         this.rootEl = document.querySelector(sliderSelector);
         console.log("rootEl", this.rootEl);
-        //@TODO проверить rootEl на null
         if (this.rootEl === null) {
             throw new Error("Elements not found");
-            return;
         }
 
-        //@TODO: проверить, что все элементы найдены
         this.sliderContainer = this.rootEl.querySelector(".zau-slider__items");
-        if (!this.sliderContainer) {
+        if (null === this.sliderContainer) {
             throw new Error("Container for slides not found");
-            return;
         }
         this.items = this.sliderContainer.querySelectorAll(".zau-slider__item");
-        if (!this.items) {
+        if (this.items.length < 1) {
             throw new Error("Slides not found");
-            return;
         }
         this.pointContainer = this.rootEl.querySelector(".zau-slider__points");
-        if (!this.pointContainer) {
+        if (null === this.pointContainer) {
             throw new Error("Container for points not found");
-            return;
         }
         this.points = [];
         this.buttonNext = this.rootEl.querySelector(".next");
-        if (!this.buttonNext) {
+        if (null === this.buttonNext) {
             throw new Error("Button not found");
-            return;
         }
         this.buttonPrev = this.rootEl.querySelector(".prev");
-        if (!this.buttonPrev) {
+        if (null === this.buttonPrev) {
             throw new Error("Button not found");
-            return;
         }
 
         this.init();
     }
 
     init() {
-        //@TODO: избавиться от всех if, которые проверены в конструкторе
         this.buttonNext.addEventListener("click", this.onClickUp.bind(this));
         this.buttonPrev.addEventListener("click", this.onClickDown.bind(this));
 
@@ -103,8 +94,11 @@ class Slider {
 
     onClickChange(event) {
         console.log("Slider.onClickChange", arguments);
-        //@TODO: разобрать и разнести на несколько строк.
-        // Методу setActiveSlide должна передаваться переменная
-        this.setActiveSlide(Array.from(event.target.parentNode.children).indexOf(event.target));
+        //event.target.parentNode.children -
+        // возвращает HTMLCollection — живую коллекцию дочерних элементов родительского узла.
+        //Array.from() - создает новый массив из массивоподобного объекта или итерируемого объекта.
+        const parentNodeEls = Array.from(event.target.parentNode.children);
+        const elIndex = parentNodeEls.indexOf(event.target);
+        this.setActiveSlide(elIndex);
     }
 }

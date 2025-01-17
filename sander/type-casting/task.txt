@@ -1,0 +1,2 @@
+Разобраться с неявным преобразованием типов
+https://learn.javascript.ru/type-conversions
