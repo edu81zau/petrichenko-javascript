@@ -27,6 +27,6 @@ npm start
 ```
 ---
 # Лекция 132 - Практика состояний на проекте.      
-Демо в файле [App.js](my-app\src\components\app\app.js)  
+Демо в  файле [App.js](my-app\src\components\app\app.js)  
 В функциональных компонентах со state можно работать только через хуки.  
 
