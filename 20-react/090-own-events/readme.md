@@ -25,4 +25,16 @@ cd my-app
 ```shell
 npm start
 ```
----
+---  
+## В этом пункте пройдено два урока  
+
+# Лекция 133 - Работа с формами, урпавляемые и неуправляемые компоненты.  
+# Лекция 134 - Иммутабельность состояния и собственные события
+Демо в  файле [App.js](my-app\src\components\app\app.js)  
+
+## Дополнительные материалы  
+
+* RU [Статья про иммутабельность](https://habr.com/ru/articles/302118/)
+* EN [Новая документация](https://react.dev/learn/updating-objects-in-state)  
+* RU [Перевод части новой док. на англ. языке] (https://reactdev.ru/archive/react16/optimizing-performance/#using-immutable-data-structures)  
+

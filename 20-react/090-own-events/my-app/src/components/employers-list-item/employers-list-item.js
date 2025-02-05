@@ -1,13 +1,13 @@
-import {Component} from "react";
+import { Component } from 'react';
 
 import './employers-list-item.css';
 
-class EmployersListItem extends Component {
+class EmployersListItem extends Component{
     constructor(props) {
         super(props);
         this.state = {
             increase: false,
-            star: false
+            rise: false
         }
     }
 
@@ -17,28 +17,28 @@ class EmployersListItem extends Component {
         }))
     }
 
-    onStar = () => {
-        this.setState(({star}) => ({
-            star: !star
+    onRise = () => {
+        this.setState(({rise}) => ({
+            rise: !rise
         }))
     }
 
     render() {
         const {name, salary, onDelete} = this.props;
-        const {increase, star} = this.state;
+        const {increase, rise} = this.state;
 
-        let className = 'list-group-item d-flex justify-content-between';
+        let classNames = "list-group-item d-flex justify-content-between";
         if (increase) {
-            className += ' increase';
+            classNames += ' increase';
         }
-        if (star) {
-            className += ' like';
+        if (rise) {
+            classNames += ' like';
         }
+
         return (
-            <li className={className}>
-                <span className="list-group-item-label"
-                      onClick={this.onStar}>{name}</span>
-                <input type="text" className="list-group-item-input" defaultValue={salary + "$"}/>
+            <li className={classNames}>
+                <span className="list-group-item-label" onClick={this.onRise}>{name}</span>
+                <input type="text" className="list-group-item-input" defaultValue={salary + '$'}/>
                 <div className='d-flex justify-content-center align-items-center'>
                     <button type="button"
                             className="btn-cookie btn-sm "
@@ -54,7 +54,7 @@ class EmployersListItem extends Component {
                     <i className="fas fa-star"></i>
                 </div>
             </li>
-        );
+        )
     }
 }
 
