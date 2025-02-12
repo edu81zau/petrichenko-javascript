@@ -2,7 +2,6 @@ import './app-filter.css';
 
 const AppFilter = (props) => {
 
-    const {onFilter} = props;
     const butData = [
         {name: 'all', label: 'Все сотрудники'},
         {name: 'up', label: 'Сотрудники на повышение'},
