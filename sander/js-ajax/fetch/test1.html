@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    async function getUsers(name) {
+        let jobs = [];
+
+        let job = fetch(`https://api.github.com/users/${name}`);
+            console.log("Message 1 - Job",job);
+            job.then(
+                /**
+                 *
+                 * @param {Response} response
+                 */
+                (response) => {
+                    console.log("Message 2 - Response", response);//Здесь возвращает response
+                    return response.json();
+                }
+            ).then(
+                (json) => {
+                    console.log("Message 3 - Json: ", json);//Здесь возвращает json
+                    jobs.push(json);
+                    console.log("Message 4 -Jobs", jobs);
+                }
+            );
+    }
+    getUsers(['ZVanoZ']);
+</script>
+
+</body>
+</html>
