@@ -8,11 +8,17 @@
     <title>Document</title>
 </head>
 <body>
+<h2> Замечания к тесту</h2>
+<pre>
+Что мы тут делаем?
+Отправляем Get запрос на https://api.github.com/users/
+с указанием имени пользователя.
+В ответ получаем данные этого пользователя
+Что бы их просмотреть нужно запустить консоль
+Нажмите F12 и выбирете вкладку Console
+</pre>
 <script>
-
-    async function getUsers(name) {
-        let jobs = [];
-
+    async function getUser(name) {
         let job = fetch(`https://api.github.com/users/${name}`);
             console.log("Message 1 - Job",job);
             job.then(
@@ -27,12 +33,10 @@
             ).then(
                 (json) => {
                     console.log("Message 3 - Json: ", json);//Здесь возвращает json
-                    jobs.push(json);
-                    console.log("Message 4 -Jobs", jobs);
                 }
             );
     }
-    getUsers(['ZVanoZ']);
+    getUser(['ZVanoZ']);
 </script>
 
 </body>

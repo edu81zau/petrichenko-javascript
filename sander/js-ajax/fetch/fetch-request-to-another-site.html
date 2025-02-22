@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<pre>
+При отправке запроса с одного сайта на другой вначале происходит предзапрос.
+Предварительный запрос браузера использует метод OPTIONS, у него нет тела,
+но есть три заголовка:
+    Origin: содержит именно источник (домен/протокол/порт), без пути.
+    Access-Control-Request-Method: содержит HTTP-метод «непростого» запроса.
+    Access-Control-Request-Headers: предоставляет разделённый запятыми список
+    его «непростых» HTTP-заголовков.
+
+При согласии сервера принимать такие запросы он отвечает со статусом 200 без тела
+но с заголовками:
+    Access-Control-Allow-Origin: должен содержать разрешённый источник.
+    Access-Control-Allow-Methods: должен содержать разрешённые методы.
+    Access-Control-Allow-Headers: должен содержать список разрешённых заголовков.
+    Кроме того, заголовок Access-Control-Max-Age может указывать количество секунд,
+    на которое нужно кешировать разрешения.
+    Так что браузеру не придётся посылать предзапрос для последующих запросов,
+    удовлетворяющих данным разрешениям.
+
+Если предзапрос успешен, браузер делает основной запрос.
+
+</pre>
+<script>
+
+/*
+*/
+</script>
+</body>
+</html>

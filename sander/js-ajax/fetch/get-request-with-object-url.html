@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h2> Замечания к тесту</h2>
+<pre>
+Расшифровка по компонентам URL
+    https: - протокол
+    site.com - hostname
+    8080 - port
+    /path/page - pathname
+    ?p1=v1&p2=v2 - search
+    #hash - hash
+Кодирование
+
+    encodeURI – кодирует URL-адрес целиком.
+    decodeURI – декодирует URL-адрес целиком.
+    encodeURIComponent – кодирует компонент URL, например, параметр, хеш, имя пути и т.п.
+    decodeURIComponent – декодирует компонент URL.
+
+Для URL целиком можно использовать encodeURI
+Для параметров лучше будет взять encodeURIComponent
+<h3>Примечания к тексту</h3>
+<h2> Приведенный ниже код работать не будет. Чтобы он заработал, необходимо выполнить следующее: </h2>
+*   Откройте в браузере URL https://www.google.com
+*   Откройте консоль разработчика ( F12 )
+*   Перейдите на вкладку Console
+*   Скопируйте код из текущего примера в поле ввода
+*   Нажмите Run
+</pre>
+<script>
+    async function getInform() {
+
+        let music = encodeURIComponent('Rock&Roll');
+        let url = new URL(`https://www.google.com/search?q=${music}`);
+
+        let res = fetch(url);
+        console.log("Message 1 - res ", res);
+        res.then(
+            /**
+             *
+             * @param {Response} response
+             */
+            (response) => {
+                console.log("Message 2 - Response", response);//Здесь возвращает response
+                return response.text();
+            }
+        ).then(
+            (text) => {
+                console.log("Message 3 - Text: ", text);//Здесь возвращает json
+            }
+        ).catch((error) => {
+                console.log("Произошла ошибка: ",error);
+            }
+        );
+    }
+
+    getInform();
+
+</script>
+
+</body>
+</html>

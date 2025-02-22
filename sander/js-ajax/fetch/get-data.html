@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<pre>
+    Проработка примера https://learn.javascript.ru/fetch-progress
+    Чтобы отслеживать процесс загрузки, нам нужно при получении очередного фрагмента
+    прибавлять его длину value к счётчику.
+    Вот полный рабочий пример, который получает ответ сервера и в процессе получения
+    выводит в консоли длину полученных данных:
+</pre>
+<script>
+    // Демонстрируется контроль над ходом загрузки
+    async function getUser(name) {
+
+        let fetchPromise = fetch(`https://api.github.com/users/${name}`);
+        console.log("Message 1 - Job", fetchPromise);
+
+        fetchPromise.then(
+            /**
+             *
+             * @param {Response} response
+             */
+            async (response) => {
+
+                let receivedLength = 0;
+                let chunks = [];
+                console.log("Message 2 - Response", response);//Здесь возвращает response
+                const reader = response.body.getReader();
+
+                while (true) {
+                    let chunk = await reader.read();
+                    console.log("Chunk = ", chunk);
+                    const {done, value} = chunk;
+                    if (done) {
+                        break;
+                    }
+                    chunks.push(value);
+                    receivedLength+=value.length;
+                }
+                let chunksAll = new Uint8Array(receivedLength); // (4.1)
+                let position = 0;
+                for(let chunk of chunks) {
+                    chunksAll.set(chunk, position); // (4.2)
+                    position += chunk.length;
+                }
+
+                let result = new TextDecoder("utf-8").decode(chunksAll);
+
+                let commit = JSON.parse(result);
+                console.log(commit.login);
+            }
+        );
+    }
+
+    getUser(['ZVanoZ']);
+</script>
+
+</body>
+</html>
