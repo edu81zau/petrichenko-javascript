@@ -10,19 +10,32 @@ class MarvelService {
         }
         return await res.json();
     }
+//Получение персонажей
+    /*
+    * limit - сколько персонажей отображать
+    * offset - сколько персонажей пропустить
+    */
 
     getAllCharacters = async () => {
-        let res = await this.getResource(`${this._apiBase}characters?limit=9&offset=210&${this._apiKey}`);
+        const url = `${this._apiBase}characters?limit=9&offset=210&${this._apiKey}`;
+
+        console.log("CharList.getAllCharacters",url);
+
+        let res = await this.getResource(url);
         res = res.data.results.map(this._transformCharacter);
         return res;
     }
+
+//Получение персонажа
     getCharacter = async (id) => {
-        let res = await this.getResource(`${this._apiBase}characters/${id}?${this._apiKey}`);
+        const url = `${this._apiBase}characters/${id}?${this._apiKey}`;
+        console.log("CharList.getCharacter",url);
+        let res = await this.getResource(url);
         res = this._transformCharacter(res.data.results[0]);
         if (res.description === "") {
             res.description = "Sorry, but we didn't find description";
         }
-        if ( res.description.length > 146){
+        if (res.description.length > 146) {
             res.description = res.description.slice(0, 146) + " ... to continue go on homepage ";
         }
 
@@ -30,13 +43,18 @@ class MarvelService {
         return res;
     }
 
+    // Наличие нижнего подчеркивание в имени метода говорит о том, что нужно
+    // вносить изменений в этот метод нужно очень аккуратно
+    // Здесь происходит трансформация данных
     _transformCharacter = (char) => {
         const res = {
+            id: char.id,
             name: char.name,
             description: char.description,
             thumbnail: char.thumbnail.path + '.' + char.thumbnail.extension,
             homepage: char.urls[0].url,
             wiki: char.urls[1].url,
+            comics: char.comics.items,
         }
         return res;
     }

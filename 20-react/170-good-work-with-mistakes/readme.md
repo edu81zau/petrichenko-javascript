@@ -29,7 +29,35 @@ cd my-app
 npm start
 ```
 ---
-### Лекция 149 Хороший тон приложения (спиннер, ошибки...)
+### Лекция 150 Жизненный цикл компонентов
+### Лекция 151 Практика с жизненным циклом, componentDidUpdate
 
-Сервис 1 для создания спиннера (https://icons8.com/preloaders/) 
-Сервис 2 для создания спиннера (https://loading.io/) 
+Диаграмма ЖЦ [RUS] (https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+DOC [RUS] (https://ru.legacy.reactjs.org/docs/react-component.html#the-component-lifecycle)
+DOC [ENG] (https://react.dev/reference/react/Component#componentdidupdate)
+DOC [RUS] (https://ru.legacy.reactjs.org/docs/react-component.html#componentdidupdate)
+
+
+
+Этапы жизненого цикла компонента
+
+1. Компонент появился на странице
+2. Компонент обновляется двумя способами
+   * Если компонент получает новое свойство, он перерисовывается. 
+   Т.о. обновляется (new props)
+   * Если внутри компонента был изменен state, то он обновляется 
+   и перерисовывается (new state)
+3. Компонент удаляется
+Произошла критическая ошибка
+
+Хуки — это функции, с помощью которых вы можете «подцепиться» к 
+состоянию и методам жизненного цикла React из функциональных компонентов.
+
+Хуки жизненого цикла компонента:
+1. componentDidMount()
+2. componentDidUpdate()
+3. componentWillUnmount()
+4. componentDidCatch()
+
+Любые обновления, любые запросы к API, к серверам нужно делать именно в
+componentDidMount()
