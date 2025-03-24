@@ -18,11 +18,11 @@ class RandomChar extends Component {
 
     componentDidMount() {
         this.updateChar();
-        console.log("Mount");
+        console.log("RandomChar.Mount");
     }
 
     componentDidUpdate() {
-        console.log("Update");
+        console.log("RandomChar.Update");
     }
 
     myUpdateComponent = () => {
@@ -30,7 +30,7 @@ class RandomChar extends Component {
     }
 
     componentWillUnmount() {
-        console.log("Unmount");
+        console.log("RandomChar.Unmount");
     }
 
     onCharLoaded = (char) => {
@@ -40,7 +40,7 @@ class RandomChar extends Component {
         });
     }
 
-    onCharLoading =()=>{
+    onCharLoading = () => {
         this.setState({
             loading: true
         })
@@ -55,7 +55,8 @@ class RandomChar extends Component {
 
 
     updateChar = () => {
-        const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
+        //const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
+        const id = Math.floor(Math.random() * (20 - 1) + 1);
         this.onCharLoading();
         this.marvelService
             .getCharacter(id)
@@ -64,7 +65,7 @@ class RandomChar extends Component {
     }
 
     render() {
-        console.log("Render");
+        console.log("RandomChar.Render");
         const {char, loading, error} = this.state;
         // const errorMessage = error ? <ErrorMessage/> : null;
         // const spinner = loading ? <Spinner/> : null;
@@ -72,7 +73,7 @@ class RandomChar extends Component {
         let view;
         if (error) {
             view = <ErrorMessage/>;
-        } else if(loading) {
+        } else if (loading) {
             view = <Spinner/>
         } else {
             view = <View char={char}/>;
@@ -103,9 +104,9 @@ class RandomChar extends Component {
 
 const View = ({char}) => {
     const {name, description, thumbnail, homepage, wiki} = char;
-    let imgStyle = {'objectFit' : 'cover'};
+    let imgStyle = {'objectFit': 'cover'};
     if (thumbnail.includes("not_available")) {
-        imgStyle = {'objectFit' : 'contain'};
+        imgStyle = {'objectFit': 'contain'};
     }
     return (
         <div className="randomchar__block">

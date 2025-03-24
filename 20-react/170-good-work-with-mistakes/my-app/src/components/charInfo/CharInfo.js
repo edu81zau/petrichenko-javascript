@@ -63,35 +63,35 @@ class CharInfo extends Component {
     render() {
         const {char, loading, error} = this.state;
 
-        // let view;
-        // if (error) {
-        //     view = <ErrorMessage/>;
-        // } else if (loading) {
-        //     view = <Spinner/>
-        // } else if (!(!char)) {
-        //     view = <View char={char}/>;
-        // } else {
-        //     view = <Skeleton/>;
-        // }
+        let view;
+        if (error) {
+            view = <ErrorMessage/>;
+        } else if (loading) {
+            view = <Spinner/>
+        } else if (!(!char)) {
+            view = <View char={char}/>;
+        } else {
+            view = <Skeleton/>;
+        }
 
-        const skeleton = char || loading || error ? null : <Skeleton/>;
-        const errorMessage = error ? <ErrorMessage/> : null;
-        const spinner = loading ? <Spinner/> : null;
-        const content = !(loading || error || !char) ? <View char={char}/> : null;
-
-        return (
-            <div className="char__info">
-                {skeleton}
-                {errorMessage}
-                {spinner}
-                {content}
-            </div>
-        )
+        // const skeleton = char || loading || error ? null : <Skeleton/>;
+        // const errorMessage = error ? <ErrorMessage/> : null;
+        // const spinner = loading ? <Spinner/> : null;
+        // const content = !(loading || error || !char) ? <View char={char}/> : null;
+        //
         // return (
         //     <div className="char__info">
-        //         {view}
+        //         {skeleton}
+        //         {errorMessage}
+        //         {spinner}
+        //         {content}
         //     </div>
         // )
+        return (
+            <div className="char__info">
+                {view}
+            </div>
+        )
     }
 }
 
@@ -122,16 +122,17 @@ const View = ({char}) => {
             </div>
             <div className="char__comics">Comics:</div>
             <ul className="char__comics-list">
-                {comics.length > 0 ? null : 'There is no comics with this character'} return (
-                {comics.map((item, i) => {
-                    // eslint-disable-next-line
-                    if (i > 9) return;
-                    return (
-                        <li key={i} className="char__comics-item">
-                            {item.name}
-                        </li>
-                    )
-                })
+                {comics.length > 0 ? null : 'There is no comics with this character'}
+                {
+                    comics.map((item, i) => {
+                        // eslint-disable-next-line
+                        if (i > 9) return;
+                        return (
+                            <li key={i} className="char__comics-item">
+                                {item.name}
+                            </li>
+                        )
+                    })
                 }
             </ul>
         </>

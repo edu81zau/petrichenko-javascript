@@ -1,7 +1,10 @@
 class MarvelService {
 
-    _apiBase = "https://gateway.marvel.com:443/v1/public/";
-    _apiKey = "apikey=af70b2d45653faa4424dbd5fddc5d1e1";
+    // _apiBase = "https://gateway.marvel.com:443/v1/public/";
+    // _apiKey = "apikey=af70b2d45653faa4424dbd5fddc5d1e1";
+
+    _apiBase = "https://marvel-server-zeta.vercel.app/";
+    _apiKey = "apikey=d4eecb0c66dedbfae4eab45d312fc1df";
 
     getResource = async (url) => {
         let res = await fetch(url);
@@ -17,7 +20,7 @@ class MarvelService {
     */
 
     getAllCharacters = async () => {
-        const url = `${this._apiBase}characters?limit=9&offset=210&${this._apiKey}`;
+        const url = `${this._apiBase}characters?limit=9&offset=10&${this._apiKey}`;
 
         console.log("CharList.getAllCharacters",url);
 
@@ -29,7 +32,7 @@ class MarvelService {
 //Получение персонажа
     getCharacter = async (id) => {
         const url = `${this._apiBase}characters/${id}?${this._apiKey}`;
-        console.log("CharList.getCharacter",url);
+        console.log("MarvelServise.getCharacter",url);
         let res = await this.getResource(url);
         res = this._transformCharacter(res.data.results[0]);
         if (res.description === "") {
