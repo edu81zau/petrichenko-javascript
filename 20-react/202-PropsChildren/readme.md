@@ -26,7 +26,11 @@ cd my-app
 npm start
 ```
 ---
-### Лекция 157. Вставка элементов через props.children  
+### Лекция 157. Вставка элементов через props.children
+### Лекция 158. Специалтзация и наследование
+### Лекция 159. Render-props паттерн
 
-DOC [RU] (https://ru.legacy.reactjs.org/docs/react-api.html#reactchildren)  
-DOC [ENG] (https://react.dev/reference/react/Children)
+
+DOC [RUS] (https://ru.legacy.reactjs.org/docs/react-api.html#reactchildren)  
+DOC [ENG] (https://react.dev/reference/react/Children)  
+DOC [RUS] (https://ru.legacy.reactjs.org/docs/render-props.html)
