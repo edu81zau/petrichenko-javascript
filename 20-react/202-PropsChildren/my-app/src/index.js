@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import {Button} from './App';
-import styles from 'styled-components';
 import styled from "styled-components";
 
 const BigButton = styled(Button)`
