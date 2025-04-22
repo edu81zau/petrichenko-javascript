@@ -1,0 +1,52 @@
+```text
+------------------------------------------------------------------
+1.
+Этот первый путнкт выполняем только один раз, при создании проекта 
+```
+* Этот вариант создания рабочего проекта
+```shell
+npx --force create-react-app my-app
+```
+------------------------------------------------------------------
+```
+* После создания проекта переходим в корневую папку проекта
+```shell
+cd my-app
+```
+* Запускаем проект
+```shell
+npm start
+```
+* Перед каждым новым запуском проекта выполняем команду
+```shell
+cd my-app
+```
+* Запускаем проект
+```shell
+npm start
+```
+---
+### Лекция 161. Порталы  
+
+DOC [RUS] (https://habr.com/ru/companies/smartprogress/articles/306096/)    
+DOC [RUS] (https://ru.legacy.reactjs.org/docs/portals.html)    
+DOC [RUS] (https://nuancesprog.ru/p/11039/)    
+DOC [ENG] (https://medium.com/trabe/reusable-react-portals-17dead20232b)  
+DOC [ENG] (https://react.dev/reference/react-dom/createPortal)  
+
+* Использование bootstrap в проекте
+1. Установка bootstrap
+```shell
+cd my-app ; npm --force install react-bootstrap bootstrap
+```  
+2. Импорт стилей
+```js
+//index.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+```  
+3. Использвание компонента
+```jsx
+//20-react/203-Render-props/my-app/src/App.js
+```
+  
+
