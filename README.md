@@ -344,8 +344,11 @@ My code for study of Petrichenko's course "Javascript"
   * https://www.udemy.com/course/javascript_full/learn/lecture/28653828#overview
   * https://campfire-school.com/courses/javascript-react-tr/episode/576
 * * [x] [204-Portals](20-react/204-Portals)
-  * https://www.udemy.com/course/javascript_full/learn/lecture/28653852#overview  
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28653852#overview
   * https://campfire-school.com/courses/javascript-react-tr/episode/577
+* * [ ] [205-Bundling_GitHub-page](20-react/205-Bundling_GitHub-page)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28653874#overview
+  * https://campfire-school.com/courses/javascript-react-tr/episode/578
 
 
 ## TODO  
