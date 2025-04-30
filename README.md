@@ -346,9 +346,19 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [204-Portals](20-react/204-Portals)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28653852#overview
   * https://campfire-school.com/courses/javascript-react-tr/episode/577
-* * [ ] [205-Bundling_GitHub-page](20-react/205-Bundling_GitHub-page)
+* * [x] [205-Bundling_GitHub-page](20-react/205-Bundling_GitHub-page)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28653874#overview
   * https://campfire-school.com/courses/javascript-react-tr/episode/578
+* * [x] [206-Introduction-to-hooks](20-react/206-Introduction-to-hooks)
+    Udemy
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28711218#overview
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28711240#questions/16007962
+    Campfire-school
+  * https://campfire-school.com/courses/javascript-react-tr/episode/580
+  * https://campfire-school.com/courses/javascript-react-tr/episode/581
+* * [x] [207-useEffect](20-react/207-useEffect_before_homework)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28711270#questions/16007962
+  * https://campfire-school.com/courses/javascript-react-tr/episode/582
 
 
 ## TODO  
