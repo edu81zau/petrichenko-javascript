@@ -359,7 +359,8 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [207-useEffect](20-react/207-useEffect_before_homework)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28711270#questions/16007962
   * https://campfire-school.com/courses/javascript-react-tr/episode/582
-
+* * [x] [208-useEffect_with_homework](20-react/208-useEffect_with_homework)
+  
 
 ## TODO  
 
