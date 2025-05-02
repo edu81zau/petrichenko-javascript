@@ -360,6 +360,9 @@ My code for study of Petrichenko's course "Javascript"
   * https://www.udemy.com/course/javascript_full/learn/lecture/28711270#questions/16007962
   * https://campfire-school.com/courses/javascript-react-tr/episode/582
 * * [x] [208-useEffect_with_homework](20-react/208-useEffect_with_homework)
+* * [x] [209-practic-lesson_Hooks](20-react/209-practic-lesson_Hooks)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28729216#questions/16007962
+  * https://campfire-school.com/courses/javascript-react-tr/episode/586
   
 
 ## TODO  
