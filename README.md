@@ -363,6 +363,12 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [209-practic-lesson_Hooks](20-react/209-practic-lesson_Hooks)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28729216#questions/16007962
   * https://campfire-school.com/courses/javascript-react-tr/episode/586
+* * [x] [210-Practice-of-our-own-hooks-on-the-project](20-react/210-Practice-of-our-own-hooks-on-the-project)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28729584#questions/17146384
+  * https://campfire-school.com/courses/javascript-react-tr/episode/588
+* * [x] [211-What-is-batching-and-how-does-it-work-in-React-18](20-react/211-What-is-batching-and-how-does-it-work-in-React-18)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/31792458#questions/17146384
+  * https://campfire-school.com/courses/javascript-react-tr/episode/589
   
 
 ## TODO  
