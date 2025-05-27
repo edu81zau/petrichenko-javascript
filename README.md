@@ -369,6 +369,12 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [211-What-is-batching-and-how-does-it-work-in-React-18](20-react/211-What-is-batching-and-how-does-it-work-in-React-18)
   * https://www.udemy.com/course/javascript_full/learn/lecture/31792458#questions/17146384
   * https://campfire-school.com/courses/javascript-react-tr/episode/589
+* * [x] [212-useTransition-useDeferredValue-and-other-React-18-innovations](20-react/212-useTransition-useDeferredValue-and-other-React-18-innovations)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/31792464#overview
+  * https://campfire-school.com/courses/javascript-react-tr/episode/590
+* * [x] [222-App-navigation-React-Router-v5](20-react/222-App-navigation-React-Router-v5)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28729616#questions/17324884
+  * https://campfire-school.com/courses/javascript-react-tr/episode/591
   
 
 ## TODO  
