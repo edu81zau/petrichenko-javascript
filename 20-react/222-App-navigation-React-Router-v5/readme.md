@@ -7,4 +7,4 @@
 * Сисок обновлений  
   DOC [ENG] (https://github.com/remix-run/react-router/releases)  
 * Гайд по миграции  
-  DOC [ENG] (https://github.com/remix-run/react-router/blob/main/docs/upgrading/v5.md#upgrade-to-react-router-v6)  
+   DOC [ENG] (https://github.com/remix-run/react-router/blob/main/docs/upgrading/v5.md#upgrade-to-react-router-v6)  
