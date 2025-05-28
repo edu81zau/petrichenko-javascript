@@ -375,6 +375,9 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [222-App-navigation-React-Router-v5](20-react/222-App-navigation-React-Router-v5)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28729616#questions/17324884
   * https://campfire-school.com/courses/javascript-react-tr/episode/591
+* * [x] [232-React-Router-v6](20-react/232-React-Router-v6)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29897320#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/592
   
 
 ## TODO  
