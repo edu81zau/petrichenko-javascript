@@ -378,6 +378,9 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [232-React-Router-v6](20-react/232-React-Router-v6)
   * https://www.udemy.com/course/javascript_full/learn/lecture/29897320#questions
   * https://campfire-school.com/courses/javascript-react-tr/episode/592
+* * [x] [242-Practice-of-creating-dynamic-routes](20-react/242-Practice-of-creating-dynamic-routes)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28746836#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/593
   
 
 ## TODO  
