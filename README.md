@@ -381,6 +381,9 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [242-Practice-of-creating-dynamic-routes](20-react/242-Practice-of-creating-dynamic-routes)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28746836#questions
   * https://campfire-school.com/courses/javascript-react-tr/episode/593
+* * [x] [252-Dynamic-imports-and-React-Lazy](20-react/252-Dynamic-imports-and-React-Lazy)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28772196#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/594
   
 
 ## TODO  
