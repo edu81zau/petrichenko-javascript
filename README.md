@@ -384,6 +384,9 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [252-Dynamic-imports-and-React-Lazy](20-react/252-Dynamic-imports-and-React-Lazy)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28772196#questions
   * https://campfire-school.com/courses/javascript-react-tr/episode/594
+* * [x] [262- React_memo-Pure-Component-and-Application-performance-optimization](20-react/262-%20React_memo-Pure-Component-and-Application-performance-optimization)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28772216#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/595
   
 
 ## TODO  
