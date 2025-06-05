@@ -387,6 +387,15 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [262- React_memo-Pure-Component-and-Application-performance-optimization](20-react/262-%20React_memo-Pure-Component-and-Application-performance-optimization)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28772216#questions
   * https://campfire-school.com/courses/javascript-react-tr/episode/595
+* * [x] [272_1- React_Context-and-useContext](20-react/272_1-%20React_Context-and-useContext)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28772238#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/596
+* * [x] [272_2- React_Context-and-useContext](20-react/272_2-%20React_Context-and-useContext)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28772238#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/596
+* * [x] [272_3- React_Context-and-useContext](20-react/272_3-%20React_Context-and-useContext)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28772238#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/596
   
 
 ## TODO  
