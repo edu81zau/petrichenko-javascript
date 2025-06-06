@@ -396,13 +396,7 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [272_3- React_Context-and-useContext](20-react/272_3-%20React_Context-and-useContext)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28772238#questions
   * https://campfire-school.com/courses/javascript-react-tr/episode/596
+* * [x] [282_useReducer](20-react/282_useReducer) 
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28772256#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/597
   
-
-## TODO  
-
-* Прорабоать fetch [fetch](sander/js-ajax/fetch)
-* Нужно попробовать параметры Get запроса передать в options
-* Проработать XMLHttpRequest  [xhr](sander/js-ajax/xhr)
-  https://learn.javascript.ru/xmlhttprequest
-* Проработать acync и await в sander  
-* Вернуться к уроку [150-new-project-and-work-with-server](20-react/150-new-project-and-work-with-server)
