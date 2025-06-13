@@ -396,7 +396,16 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [272_3- React_Context-and-useContext](20-react/272_3-%20React_Context-and-useContext)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28772238#questions
   * https://campfire-school.com/courses/javascript-react-tr/episode/596
-* * [x] [282_useReducer](20-react/282_useReducer) 
+* * [x] [282_useReducer](20-react/282_useReducer)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28772256#questions
   * https://campfire-school.com/courses/javascript-react-tr/episode/597
+* * [x] [292_Higher-Order-Components_HOC](20-react/292_%20Higher-Order-Components_HOC)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28772276#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/598
+* * [x] [302-React-Libraries-and-Ecosystem](20-react/302-React-Libraries-and-Ecosystem)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28829054#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/599
+* * [x] [312-React-Transition-Group-without-homework](20-react/312-React-Transition-Group-without-homework)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28829116#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/600
   
