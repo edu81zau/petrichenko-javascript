@@ -408,4 +408,10 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [312-React-Transition-Group-without-homework](20-react/312-React-Transition-Group-without-homework)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28829116#questions
   * https://campfire-school.com/courses/javascript-react-tr/episode/600
+* * [x] [322-React-Transition-Group-with-homework](20-react/322-React-Transition-Group-with-homework)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28829116#questions/16738122
+  * https://campfire-school.com/courses/javascript-react-tr/episode/600
+* * [x] [332-Formik-Yup_Part-1](20-react/332-Formik-Yup_Part-1)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28918372#questions/16593310
+  * https://campfire-school.com/courses/javascript-react-tr/episode/601
   
