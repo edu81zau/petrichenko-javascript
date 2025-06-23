@@ -60,7 +60,7 @@ const Form = () => {
             <input
                 id="amount"
                 name="amount"
-                type="amount"
+                type="number"
                 value={formik.values.amount}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
