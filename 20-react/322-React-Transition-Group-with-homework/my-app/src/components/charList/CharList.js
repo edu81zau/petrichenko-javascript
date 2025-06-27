@@ -1,6 +1,6 @@
-import {useState, useEffect, useRef} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import PropTypes from 'prop-types';
-import {CSSTransition, TransitionGroup} from "react-transition-group";
+import {CSSTransition, TransitionGroup} from 'react-transition-group';
 
 import Spinner from "../spinner/Spinner";
 import ErrorMessage from "../errorMessage/ErrorMessage";
@@ -18,6 +18,8 @@ const CharList = (props) => {
 
     const {loading, error, getAllCharacters} = useMarvelService();
 
+    const itemRefs = useRef([]);
+
     useEffect(() => {
         onRequest(offset, true);
     }, [])
@@ -27,68 +29,82 @@ const CharList = (props) => {
         getAllCharacters(offset).then(onCharListLoaded)
     }
 
-    //Здесь персонажи загрузились
-    const onCharListLoaded = (newCharList) => {
+    const onCharListLoaded = async (newCharList) => {
         let ended = false;
         if (newCharList.length < 9) {
             ended = true;
         }
-        //новые персонажи добавляются к предыдущим в charList
-        setCharList(charList => [...charList, ...newCharList]);
-        setNewItemLoading(newItemLoading => false);
-        setOffset(offset => offset + 9);
-        setCharEnded(charEnded => ended);
+        setCharList([...charList, ...newCharList]);
+        setNewItemLoading(false);
+        setOffset(offset + 9);
+        setCharEnded(ended);
     }
 
-    const itemRefs = useRef([]);
+    const focusOnItem = (index) => {
+        itemRefs.current.forEach(item => {
+            if (item) {
+                item.classList.remove('char__item_selected');
+            }
+        });
 
-    const focusOnItem = (id) => {
-        console.log("CharList.focusOnItem -- ", id);
-        itemRefs.current.forEach(item => item.classList.remove('char__item_selected'));
-        itemRefs.current[id].classList.add('char__item_selected');
-        itemRefs.current[id].focus();
-    }
+        if (itemRefs.current[index]) {
+            itemRefs.current[index].classList.add("char__item_selected");
+            itemRefs.current[index].focus();
+        }
+    };
 
-    function renderItems(arr) {
+    const blurOnItem = (index) => {
+        if (itemRefs.current[index]) {
+            itemRefs.current[index].classList.remove("char__item_selected");
+        }
+    };
+
+
+    const renderItems = arr => {
         const items = arr.map((item, i) => {
-            console.log("CharList.renderItems -- ", item.id)
             let imgStyle = {'objectFit': 'cover'};
             if (item.thumbnail.includes("not_available")) {
-                imgStyle = {'objectFit': 'contain'};
+                imgStyle = { objectFit: "contain" };
             }
             return (
-                <CSSTransition key={item.id} timeout={500} classNames="char__item">
+                <CSSTransition
+                    key={item.id}
+                    timeout={500}
+                    classNames="char__item"
+                    nodeRef={el => itemRefs.current[i] = el}
+                >
                     <li
                         className="char__item"
                         tabIndex={0}
-                        ref={el => itemRefs.current[i] = el}
                         key={item.id}
+                        ref={el => itemRefs.current[i] = el}
                         onClick={() => {
                             props.onCharSelected(item.id);
                             focusOnItem(i);
                         }}
-                        onKeyDown={(e) => {
-                            if (e.key === ' ' || e.key === "Enter") {
-                                //e.preventDefault();
+                        onBlur={() => blurOnItem(i)}
+                        onKeyPress={(e) => {
+                            if (e.key === "Enter") {
                                 props.onCharSelected(item.id);
                                 focusOnItem(i);
                             }
-                        }}>
-
-                        <img src={item.thumbnail} alt={item.name} style={imgStyle}/>
+                        }}
+                    >
+                        <img src={item.thumbnail} alt={item.name} style={imgStyle} />
                         <div className="char__name">{item.name}</div>
                     </li>
                 </CSSTransition>
-            )
+            );
         });
+
         return (
             <ul className="char__grid">
-                <TransitionGroup component={'ul'}  className="char__grid">
+                <TransitionGroup component={null}>
                     {items}
                 </TransitionGroup>
             </ul>
-        )
-    }
+        );
+    };
 
     const items = renderItems(charList);
 

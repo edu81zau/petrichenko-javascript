@@ -8,6 +8,8 @@ import ErrorMessage from "../errorMessage/ErrorMessage";
 
 import './singleComicPage.scss';
 import Skeleton from "../skeleton/Skeleton";
+import AppBanner from "../appBanner/AppBanner";
+
 
 
 const SingleComicPage = () => {
@@ -43,7 +45,8 @@ const SingleComicPage = () => {
     }
 
     return (
-        <>
+        <> 
+			<AppBanner/>
             {view}
         </>
     )
