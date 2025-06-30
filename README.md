@@ -417,4 +417,5 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [342-Formik-Yup_Part-2](20-react/342-Formik-Yup_Part-2)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28918508#questions/16593310
   * https://campfire-school.com/courses/javascript-react-tr/episode/602
+* * [x] [352-Formik-Yup_with-homework](20-react/352-Formik-Yup_with-homework)
   
