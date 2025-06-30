@@ -10,6 +10,15 @@
   DOC [ENG] (https://final-form.org/react/)
 
 ------------------------------------------------------------------
+* Установка formik
+```shell  
+ npm install formik --save  
+```
+
+* Установка yup
+```shell  
+npm install --force yup --save  
+```
 * Строка
   JSON.stringify(values, null, 2)
   используется для того, что бы объект, который приходит первым аргументом
