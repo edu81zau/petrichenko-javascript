@@ -418,7 +418,12 @@ My code for study of Petrichenko's course "Javascript"
   * https://www.udemy.com/course/javascript_full/learn/lecture/28918508#questions/16593310
   * https://campfire-school.com/courses/javascript-react-tr/episode/602
 * * [x] [352-Formik-Yup_with-homework](20-react/352-Formik-Yup_with-homework)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28935416#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/603
 * * [x] [362-SEO-optimization-web-application_React-helmet](20-react/362-SEO-optimization-web-application_React-helmet)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28935434#questions
-  * https://campfire-school.com/courses/javascript-react-tr/episode/603
+  * https://campfire-school.com/courses/javascript-react-tr/episode/604
+* * [x] [372-FSM_Finite-state-machine](20-react/372-FSM_Finite-state-machine)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/28935598#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/605
   
