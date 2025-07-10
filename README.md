@@ -440,4 +440,7 @@ My code for study of Petrichenko's course "Javascript"
     Campfire-school
   * https://campfire-school.com/courses/javascript-react-tr/episode/607
   * https://campfire-school.com/courses/javascript-react-tr/episode/608
+* * [x] [020-Pure-functions](20-react_redux/020-Pure-functions)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29048508#questions/20339305
+  * https://campfire-school.com/courses/javascript-react-tr/episode/609
   
