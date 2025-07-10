@@ -6,7 +6,6 @@ import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 
 import './comicsList.scss';
-import charList from "../charList/CharList";
 
 const setContent = (process, Component, newItemLoading) => {
     switch (process) {
