@@ -426,4 +426,18 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [372-FSM_Finite-state-machine](20-react/372-FSM_Finite-state-machine)
   * https://www.udemy.com/course/javascript_full/learn/lecture/28935598#questions
   * https://campfire-school.com/courses/javascript-react-tr/episode/605
+
+---
+
+**Chapter 3: React + Redux.**
+
+[20-react_redux](20-react_redux)  
+
+* * [x] [010-Redux-Fundamentals_Theory-and-Practice](20-react_redux/010-Redux-Fundamentals_Theory-and-Practice)
+    Udemy
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29048466#questions/17351830
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29048480#questions/17351830
+    Campfire-school
+  * https://campfire-school.com/courses/javascript-react-tr/episode/607
+  * https://campfire-school.com/courses/javascript-react-tr/episode/608
   
