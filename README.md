@@ -446,4 +446,7 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [030-Optimization-through_actionCreators-and-bindActionCreator](20-react_redux/030-Optimization-through_actionCreators-and-bindActionCreator)
   * https://www.udemy.com/course/javascript_full/learn/lecture/29048512#questions/18399350
   * https://campfire-school.com/courses/javascript-react-tr/episode/610
+* * [x] [040-Add-React-to-the-project](20-react_redux/040-Add-React-to-the-project)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29048516#questions/18399350
+  * https://campfire-school.com/courses/javascript-react-tr/episode/611
   
