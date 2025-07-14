@@ -449,4 +449,7 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [040-Add-React-to-the-project](20-react_redux/040-Add-React-to-the-project)
   * https://www.udemy.com/course/javascript_full/learn/lecture/29048516#questions/18399350
   * https://campfire-school.com/courses/javascript-react-tr/episode/611
+* * [x] [050-Connecting-React-and-Redux_using-connect](20-react_redux/050-Connecting-React-and-Redux_using-connect)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29060066#questions/17431574
+  * https://campfire-school.com/courses/javascript-react-tr/episode/612
   
