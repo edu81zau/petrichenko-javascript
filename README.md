@@ -458,4 +458,7 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [070-Redux-devtools](20-react_redux/070-Redux-devtools)
   * https://www.udemy.com/course/javascript_full/learn/lecture/29060090#questions/17431574
   * https://campfire-school.com/courses/javascript-react-tr/episode/614
+* * [x] [080-Action-Naming-Convention-and-Homework-Mini-Exam](20-react_redux/080-Action-Naming-Convention-and-Homework-Mini-Exam)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29072528#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/615
   
