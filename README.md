@@ -461,4 +461,7 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [080-Action-Naming-Convention-and-Homework-Mini-Exam](20-react_redux/080-Action-Naming-Convention-and-Homework-Mini-Exam)
   * https://www.udemy.com/course/javascript_full/learn/lecture/29072528#questions
   * https://campfire-school.com/courses/javascript-react-tr/episode/615
+* * [x] [090-Combining-Reducers-and-Elegant-Selectors_CreateSelector](20-react_redux/090-Combining-Reducers-and-Elegant-Selectors_CreateSelector)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29086608#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/617
   
