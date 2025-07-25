@@ -464,4 +464,12 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [090-Combining-Reducers-and-Elegant-Selectors_CreateSelector](20-react_redux/090-Combining-Reducers-and-Elegant-Selectors_CreateSelector)
   * https://www.udemy.com/course/javascript_full/learn/lecture/29086608#questions
   * https://campfire-school.com/courses/javascript-react-tr/episode/617
-  
+* * [x] [100-Store-enhancers_Middleware_Redux-thunk](20-react_redux/100-Store-enhancers_Middleware_Redux-thunk)
+    Udemy
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29086698#questions
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29086716#questions
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29168366#questions  
+    Campfire-school
+  * https://campfire-school.com/courses/javascript-react-tr/episode/619  
+  * https://campfire-school.com/courses/javascript-react-tr/episode/620
+  * https://campfire-school.com/courses/javascript-react-tr/episode/621 
