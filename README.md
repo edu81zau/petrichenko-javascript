@@ -473,3 +473,6 @@ My code for study of Petrichenko's course "Javascript"
   * https://campfire-school.com/courses/javascript-react-tr/episode/619  
   * https://campfire-school.com/courses/javascript-react-tr/episode/620
   * https://campfire-school.com/courses/javascript-react-tr/episode/621 
+* * [x] [110-Redux-Toolkit_configureStore](20-react_redux/110-Redux-Toolkit_configureStore)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29168506#questions
+  * https://campfire-school.com/courses/javascript-react-tr/episode/622
