@@ -479,3 +479,6 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [120-Redux-Toolkit_createAction](20-react_redux/120-Redux-Toolkit_createAction)
   * https://www.udemy.com/course/javascript_full/learn/lecture/29168558#questions/17957918
   * https://campfire-school.com/courses/javascript-react-tr/episode/623
+* * [x] [130-Redux-Toolkit_createReducer](20-react_redux/130-Redux-Toolkit_createReducer)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29168590#questions/23272013
+  * https://campfire-school.com/courses/javascript-react-tr/episode/624
