@@ -485,3 +485,6 @@ My code for study of Petrichenko's course "Javascript"
 * * [x] [140-Redux-Toolkit_createSlice](20-react_redux/140-Redux-Toolkit_createSlice)
   * https://www.udemy.com/course/javascript_full/learn/lecture/29168622#questions
   * https://campfire-school.com/courses/javascript-react-tr/episode/625
+* * [x] [150-Redux-Toolkit_createAsyncThunk](20-react_redux/150-Redux-Toolkit_createAsyncThunk)
+  * https://www.udemy.com/course/javascript_full/learn/lecture/29168644#questions/21994506
+  * https://campfire-school.com/courses/javascript-react-tr/episode/626
