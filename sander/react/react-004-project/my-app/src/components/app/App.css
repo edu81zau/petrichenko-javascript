@@ -1,0 +1,15 @@
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 5px;
+  padding: 0;
+}
+
+.avatar { margin: 5px; border-radius: 50%; min-height: 70px; }
+.profile {
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  margin-top: 20px;
+  padding: 10px;
+}

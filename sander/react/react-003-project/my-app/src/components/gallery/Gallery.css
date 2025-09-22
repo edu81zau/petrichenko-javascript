@@ -1,0 +1,8 @@
+
+.avatar { margin: 5px; border-radius: 50%; min-height: 70px; }
+.profile {
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    margin-top: 20px;
+    padding: 10px;
+}
