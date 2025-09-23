@@ -42,4 +42,27 @@ cd my-app
 * Запускаем проект
 ```shell
 npm start
-```
+```  
+----  
+
+## Лекция 128. Работа со списками и алгоритм согласования  
+
+* Базовая документация  
+  DOC [RU] (https://ru.legacy.reactjs.org/docs/reconciliation.html)
+* Сверка и Fiber  
+  DOC [RU] (https://habr.com/ru/articles/444276/)  
+* Новая документация  
+  DOC [ENG] (https://react.dev/learn/preserving-and-resetting-state)
+* Перевод новой документации  
+  DOC [RU] (https://reactdev.ru/learn/preserving-and-resetting-state/)
+
+----  
+
+## Лекция 129. Состояния компонентов
+
+* Базовая документация, первая часть статьи  
+  DOC [RU] (https://ru.legacy.reactjs.org/docs/state-and-lifecycle.html)
+* Новая документация  
+  DOC [ENG] (https://react.dev/learn/state-a-components-memory)
+* Перевод новой документации  
+  DOC [RU] (https://reactdev.ru/learn/state-a-components-memory/)

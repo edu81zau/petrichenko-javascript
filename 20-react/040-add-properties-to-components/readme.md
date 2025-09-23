@@ -42,4 +42,21 @@ cd my-app
 * Запускаем проект
 ```shell
 npm start
-```
+```  
+----  
+
+## Лекция 126. Свойства компонентов 
+
+* Базовая документация  
+  DOC [RU] (https://ru.legacy.reactjs.org/docs/components-and-props.html)
+* Новая документация  
+  DOC [ENG] (https://react.dev/learn/passing-props-to-a-component)
+* Перевод новой документации  
+  DOC [RU] (https://reactdev.ru/learn/passing-props-to-a-component/#step-2-read-props-inside-the-child-component)
+
+----
+
+## Лекция 127. Практика свойств на проекте 
+
+* Дополнительная библиотека по работе с классами  
+  DOC [ENG] (https://www.npmjs.com/package/classnames)  
